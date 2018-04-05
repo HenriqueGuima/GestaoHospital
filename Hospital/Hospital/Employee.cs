@@ -9,15 +9,25 @@ namespace Hospital
     /// <summary>
     /// Enummerandos
     /// </summary>
-    enum Especialidades
+    
+    abstract class Employee
     {
-        Medicina, Enfermaria, Pediatria
-    }
-    class Staff
-    {
-        int ID;
+        /*int ID;
         string Nome = " ";
         int Idade;
+        private int v1;
+        private Employee rodrigo;
+        private int v2;
+        private Especialidades medicina;
+
+        public Employee(int v1, Employee rodrigo, int v2, Especialidades medicina)
+        {
+            this.v1 = v1;
+            this.rodrigo = rodrigo;
+            this.v2 = v2;
+            this.medicina = medicina;
+        }
+
         //Fazer mais alguns
         //Especialidades esp;
 
@@ -48,6 +58,13 @@ namespace Hospital
                 Especialidades = especialidades
 
             };
-        }
+        }*/
+
+        public int ID { get; set; }
+        public string Nome { get; set; }
+        public int Idade { get; set; }
+        
+
+           
     }
 }

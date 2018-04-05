@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hospital
 {
-    class Horario : Staff
+    class Horario : Employee
     {
         //Fazer cenas com o DateTime
     }

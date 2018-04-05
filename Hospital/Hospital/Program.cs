@@ -10,8 +10,9 @@ namespace Hospital
     {
         static void Main(string[] args)
         {
-            Staff Rodrigo = new Staff();
-            Rodrigo.CriaFicha(46, "Rodrigo", 30, Especialidades.Medicina); 
+            Employee Rodrigo = new Employee(46, Rodrigo, 30, Especialidades.Medicina);
+
+            Rodrigo.CriaFicha(46, Rodrigo, 30, Especialidades.Medicina); 
         }
     }
 }
