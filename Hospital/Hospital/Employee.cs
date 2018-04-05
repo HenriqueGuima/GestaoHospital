@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Hospital
 {
     /// <summary>
-    /// Enummerandos
+    /// Enumerandos
     /// </summary>
     
     abstract class Employee
