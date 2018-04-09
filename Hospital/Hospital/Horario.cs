@@ -41,7 +41,7 @@ namespace Hospital
             string[] datas = new string[] { data };
 
             DateTime parsedDate;
-
+            
             foreach (string sdata in datas)
             {
                 if (DateTime.TryParseExact(sdata, formatos, null, DateTimeStyles.AllowWhiteSpaces | DateTimeStyles.AdjustToUniversal, out parsedDate))
