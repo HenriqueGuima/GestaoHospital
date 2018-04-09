@@ -10,7 +10,7 @@ namespace Hospital
     {
         public enum Especialidades
         {
-            Medicina, Enfermaria, Pediatria
+            Pediatria, Cardiologia
         }
 
         public Especialidades Esp { get; set; }

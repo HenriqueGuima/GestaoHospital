@@ -11,7 +11,7 @@ namespace Hospital
         static void Main(string[] args)
         {
             //Dados pré-definidos
-            Employee docente = new Medic (50, "Rodrigo", 62, Medic.Especialidades.Enfermaria);
+            Employee docente = new Medic (50, "Rodrigo", 62, Medic.Especialidades.Cardiologia);
             Console.WriteLine(docente.ID);
             Console.WriteLine(docente.Nome);
             Console.WriteLine(docente.Idade);

@@ -34,7 +34,7 @@ namespace Hospital
         //public int Ano { get; set; }
 
         //resolver erros
-        public void InsereData ()
+        public void InsereData()
         {
             string[] formatos = { "ddMMaaaa", "HHmmss" };
             string data = Console.ReadLine();
@@ -42,12 +42,13 @@ namespace Hospital
 
             DateTime parsedDate;
 
-            foreach (var data in datas)
+            foreach (string sdata in datas)
             {
-                if (DateTime.TryParseExact(datas, formatos, null, DateTimeStyles.AllowWhiteSpaces | DateTimeStyles.AdjustToUniversal, out parsedDate));
+                if (DateTime.TryParseExact(sdata, formatos, null, DateTimeStyles.AllowWhiteSpaces | DateTimeStyles.AdjustToUniversal, out parsedDate))
                 {
                     Console.WriteLine("{1:g}", datas, parsedDate);
-                }else
+                }
+                else
             	{
                     Console.WriteLine("Não foi convertido {0}", datas);
                 }
