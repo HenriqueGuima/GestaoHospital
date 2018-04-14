@@ -33,8 +33,7 @@ namespace Hospital
         //public int Mes{ get; set; }
         //public int Ano { get; set; }
 
-        //resolver erros
-        public void InsereData()
+        public static void InsereData()
         {
             string[] formatos = { "ddMMaaaa", "HHmmss" };
             string data = Console.ReadLine();

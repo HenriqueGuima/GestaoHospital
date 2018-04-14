@@ -33,7 +33,7 @@ namespace Hospital
                 docente2.Idade = int.Parse(Console.ReadLine());
                 Console.WriteLine("\n\nInserir Nome");
                 docente2.Nome = Console.ReadLine();
-                //InsereData(); //Não encontra o método
+                Horario.InsereData();
 
                 Console.WriteLine("\n\nId \t{0}\nIdade \t{1}\nNome \t{2}\n", docente2.ID, docente2.Idade, docente2.Nome);
             }
