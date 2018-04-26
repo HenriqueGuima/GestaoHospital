@@ -20,39 +20,40 @@ namespace Hospital
         //    DateTime.TryParse(Input, out resultado);
 
         //}
-        //Fazer cenas com o DateTime
 
-        //public int Data (int dia, int mes, int ano)
+        ////Fazer cenas com o DateTime
+
+        //public int Data(int dia, int mes, int ano)
         //{
         //    int Dia = dia;
         //    int Mes = mes;
         //    int Ano = ano;
         //}
 
-        //public int Dia{ get; set; }
-        //public int Mes{ get; set; }
+        //public int Dia { get; set; }
+        //public int Mes { get; set; }
         //public int Ano { get; set; }
 
-        public static void InsereData()
-        {
-            string[] formatos = { "ddMMaaaa", "HHmmss" };
-            string data = Console.ReadLine();
-            string[] datas = new string[] { data };
+        //public static void InsereData()
+        //{
+        //    string[] formatos = { "ddMMaaaa", "HHmmss" };
+        //    string data = Console.ReadLine();
+        //    string[] datas = new string[] { data };
 
-            DateTime parsedDate;
+        //    DateTime parsedDate;
             
-            foreach (string sdata in datas)
-            {
-                if (DateTime.TryParseExact(sdata, formatos, null, DateTimeStyles.AllowWhiteSpaces | DateTimeStyles.AdjustToUniversal, out parsedDate))
-                {
-                    Console.WriteLine("{1:g}", datas, parsedDate);
-                }
-                else
-            	{
-                    Console.WriteLine("Não foi convertido {0}", datas);
-                }
-            }
+        //    foreach (string sdata in datas)
+        //    {
+        //        if (DateTime.TryParseExact(sdata, formatos, null, DateTimeStyles.AllowWhiteSpaces | DateTimeStyles.AdjustToUniversal, out parsedDate))
+        //        {
+        //            Console.WriteLine("{1:g}", datas, parsedDate);
+        //        }
+        //        else
+        //    	{
+        //            Console.WriteLine("Não foi convertido {0}", datas);
+        //        }
+        //    }
            
-        }
+        //}
     }
 }
