@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Hospital
 {
-    class Menu_Symptoms
+    class Menu_Diseases
     {
         public void Show()
         {
-            Console.WriteLine("1- Insert Symptom");
-            Console.WriteLine("2- List Symtoms");
-            Console.WriteLine("3- Edit Symptom");
-            Console.WriteLine("4- Remove Symptom");
+            Console.WriteLine("1- Insert Disease");
+            Console.WriteLine("2- List Diseases");
+            Console.WriteLine("3- Edit Disease");
+            Console.WriteLine("4- Remove Disease");
             Console.WriteLine("5- Return");
         }
     }

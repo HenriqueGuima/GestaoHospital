@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Horario.cs" />
     <Compile Include="Medic.cs" />
+    <Compile Include="Menu_Diseases.cs" />
     <Compile Include="Menu_Doctors.cs" />
     <Compile Include="Menu_Patient.cs" />
     <Compile Include="Menu_Principal.cs" />
@@ -54,6 +55,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Diseases.txt" />
+    <Content Include="Doctors.txt" />
+    <Content Include="Patients.txt" />
+    <Content Include="Symptoms.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

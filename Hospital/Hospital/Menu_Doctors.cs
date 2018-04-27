@@ -12,6 +12,9 @@ namespace Hospital
         {
             Console.WriteLine("1- New Doctor");
             Console.WriteLine("2- List Doctors");
+            Console.WriteLine("3- Edit Doctor");
+            Console.WriteLine("4- Remove Doctor");
+            Console.WriteLine("5- Return");
         }
     }
 }
