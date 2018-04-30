@@ -25,7 +25,6 @@ namespace Hospital
                 Console.WriteLine("3- Edit Patient");
                 Console.WriteLine("4- Remove Patient");
                 Console.WriteLine("0- Return");
-
                 opcao = int.Parse(Console.ReadLine());
 
                 switch (opcao)
