@@ -9,51 +9,70 @@ namespace Hospital
 {
     class Horario : Employee
     {
-        //public static void InsereData()
-        //{
-        //    Console.WriteLine("Insira a data da consulta");
-        //    Console.WriteLine("\n0000-00-00 00:00:00");
+        int dia;
+        int mes;
+        int ano;
+        int horas;
+        int minutos;
 
-        //    var Input = Console.ReadLine();
+        public Horario()
+        {
+            mes = 1;
+            dia = 1;
+            ano = 2000;
+            horas = 1;
+            minutos = 1;
+        }
 
-        //    DateTime resultado;
-        //    DateTime.TryParse(Input, out resultado);
+        public int Mes { get { return (mes); } set {mes = value; } }
+        public int Dia { get { return (dia); } set { dia = value; } }
+        public int Ano { get { return (ano); } set { ano = value; } }
+        public int Horas { get { return (horas); } set { horas = value; } }
+        public int Minutos { get { return (minutos); } set { minutos = value; } }
 
-        //}
-
-        ////Fazer cenas com o DateTime
-
-        //public int Data(int dia, int mes, int ano)
-        //{
-        //    int Dia = dia;
-        //    int Mes = mes;
-        //    int Ano = ano;
-        //}
-
-        //public int Dia { get; set; }
-        //public int Mes { get; set; }
-        //public int Ano { get; set; }
-
-        //public static void InsereData()
-        //{
-        //    string[] formatos = { "ddMMaaaa", "HHmmss" };
-        //    string data = Console.ReadLine();
-        //    string[] datas = new string[] { data };
-
-        //    DateTime parsedDate;
-            
-        //    foreach (string sdata in datas)
-        //    {
-        //        if (DateTime.TryParseExact(sdata, formatos, null, DateTimeStyles.AllowWhiteSpaces | DateTimeStyles.AdjustToUniversal, out parsedDate))
-        //        {
-        //            Console.WriteLine("{1:g}", datas, parsedDate);
-        //        }
-        //        else
-        //    	{
-        //            Console.WriteLine("Não foi convertido {0}", datas);
-        //        }
-        //    }
-           
-        //}
+        public static string Getmonth(int mes)
+        {
+            string mesnome = string.Empty;
+            switch (mes)
+            {
+                case 1:
+                    mesnome = "Janeiro";
+                    break;
+                case 2:
+                    mesnome = "Fevereiro";
+                    break;
+                case 3:
+                    mesnome = "Marco";
+                    break;
+                case 4:
+                    mesnome = "Abril";
+                    break;
+                case 5:
+                    mesnome = "Maio";
+                    break;
+                case 6:
+                    mesnome = "Junho";
+                    break;
+                case 7:
+                    mesnome = "Julho";
+                    break;
+                case 8:
+                    mesnome = "Agosto";
+                    break;
+                case 9:
+                    mesnome = "Setembro";
+                    break;
+                case 10:
+                    mesnome = "Outubro";
+                    break;
+                case 11:
+                    mesnome = "Novembro";
+                    break;
+                case 12:
+                    mesnome = "Dezembro";
+                    break;
+            }
+            return (mesnome);
+        }
     }
 }

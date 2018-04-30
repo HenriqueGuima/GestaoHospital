@@ -1,1 +1,14 @@
-﻿
+﻿Heart disease
+Stroke
+Lung cancer
+Lower respiratory infections
+Chronic obstructive pulmonary disease (COPD)
+Colon cancer
+Alzheimer's disease
+Type 2 diabetes
+Breast cancer
+Stomach cancer
+HIV/AIDS
+Diarrhea
+Tuberculosis
+Malaria
