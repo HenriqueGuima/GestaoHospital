@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Hospital
 {
@@ -18,6 +19,10 @@ namespace Hospital
             Menu_Symptoms symptom = new Menu_Symptoms();
             Menu_Diseases disease = new Menu_Diseases();
 
+            string path = @"Patients.txt";
+            string[] a = File.ReadAllLines(path);
+            p = new Patient[a.Length];
+
             do
             {
                 Console.WriteLine("1- New Patient");
@@ -29,6 +34,12 @@ namespace Hospital
 
                 switch (opcao)
                 {
+                    case 2:
+                        for (int i = 0; i < a.Length; i++)
+                        {
+                            string fullName = new string(a[i].ToArray());
+                        }
+                        break;
                     case 0:
                         Console.Clear();
                         menu.Show();
