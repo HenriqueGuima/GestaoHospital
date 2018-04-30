@@ -25,7 +25,6 @@ namespace Hospital
                 Console.WriteLine("3-Symptoms");
                 Console.WriteLine("4-Disases");
                 Console.WriteLine("0-Close");
-
                 opcao = int.Parse(Console.ReadLine());
 
                 switch (opcao)
