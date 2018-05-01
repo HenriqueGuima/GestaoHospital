@@ -10,21 +10,18 @@ namespace Hospital
     {
         static void Main(string[] args)
         {
-            Menu_Principal menu = new Menu_Principal();
+            //Menu_Principal menu = new Menu_Principal();
+
             ////Dados pré-definidos
             //Employee docente = new Medic (50, "Rodrigo", 62, Medic.Especialidades.Cardiologia);
             //Console.WriteLine(docente.ID);
             //Console.WriteLine(docente.Nome);
             //Console.WriteLine(docente.Idade);
             ////Console.WriteLine(); //Fazer com que apresente enfermaria na mesma sem ter que implementar de novo
-
             //Employee docente1 = new Medic(0, " ", 0, Medic.Especialidades.Pediatria); //Tentar fazer com que dê para ser o utilizador a inserir
-
             //Console.WriteLine("\nQuantos docentes a registar?  ");
             //int nDocentes = int.Parse(Console.ReadLine());
-
             ////Registar num ficheiro os dados
-
             //for (int i = 0; i < nDocentes; i++)
             //{
             //    Employee docente2 = docente1;
@@ -38,12 +35,32 @@ namespace Hospital
 
             //    Console.WriteLine("\n\nId \t{0}\nIdade \t{1}\nNome \t{2}\n", docente2.ID, docente2.Idade, docente2.Nome);
             //}
-
             ////Ciclo para mostrar tudo no final
-
             //Console.ReadKey();
 
-            menu.Show();
+            //menu.Show();
+            Patient patient1 = new Patient("nome");
+            Patients patients = new Patients();
+            patients.AddP(patient1);
+
+            int op;
+
+            Menu_Principal.Principal();
+
+            op = int.Parse(Console.ReadLine());
+
+            switch (op)
+            {
+                case 0:
+                    break;
+                case 1:
+                    Console.Clear();
+                    Menu_Principal.PatientsI();
+                    break;
+                default:
+                    break;
+            }
         }
+
     }
 }

@@ -31,7 +31,7 @@ namespace Hospital
                 {
                     case 0:
                         Console.Clear();
-                        menu.Show();
+                        //menu.Show();
                         break;
                 }
             } while (opcao != 0);

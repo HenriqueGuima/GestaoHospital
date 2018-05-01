@@ -19,9 +19,9 @@ namespace Hospital
             Menu_Symptoms symptom = new Menu_Symptoms();
             Menu_Diseases disease = new Menu_Diseases();
 
-            string path = @"Patients.txt";
-            string[] a = File.ReadAllLines(path);
-            p = new Patient[a.Length];
+            //string path = @"Patients.txt";
+            //string[] a = File.ReadAllLines(path);
+            //p = new Patient[a.Length];
 
             do
             {
@@ -34,15 +34,16 @@ namespace Hospital
 
                 switch (opcao)
                 {
-                    case 2:
-                        for (int i = 0; i < a.Length; i++)
-                        {
-                            string fullName = new string(a[i].ToArray());
-                        }
+                    case 1:
+                        //for (int i = 0; i < a.Length; i++)
+                        //{
+                        //    string fullName = new string(a[i].ToArray());
+                        //}
+
                         break;
                     case 0:
                         Console.Clear();
-                        menu.Show();
+                        //menu.Show();
                         break;
                 }
             } while (opcao != 0);

@@ -10,9 +10,21 @@ namespace Hospital
     {
         string nome;
 
-        public Patient(string a)
+        static int tpatient = 0;
+
+        public Patient()
         {
-            nome = a;
+            tpatient++;
+            nome = "";
         }
+
+        public Patient(string nome)
+        {
+            tpatient++;
+            this.nome = nome;
+        }
+
+        public string Nome { get { return nome; } set { nome = value; } }
+        public int Tpatient{ get {return tpatient; }}
     }
 }
