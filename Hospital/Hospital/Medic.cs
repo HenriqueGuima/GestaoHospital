@@ -15,11 +15,11 @@ namespace Hospital
 
         public Especialidades Esp { get; set; }
 
-        public Medic(int id, string nome, int idade, Especialidades esp)
+        public Medic(string nome, Especialidades esp)
         {
-            base.ID = id;
+            //base.ID = id;
             base.Nome = nome;
-            base.Idade = idade;
+            //base.Idade = idade;
             this.Esp = esp;
         }
 
