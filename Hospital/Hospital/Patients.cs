@@ -8,7 +8,7 @@ namespace Hospital
 {
     class Patients
     {
-        int N = 5; //Máximo pacientes
+        int N = 100; //Máximo pacientes
         Patient[] patients; //Cria um array de pacientes
         static int tpatient=0; //Pacientes no total, vai servir para os adicionar
 

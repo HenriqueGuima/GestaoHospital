@@ -12,6 +12,8 @@ namespace Hospital
     
     abstract class Employee
     {
+        #region COMMENT
+
         /*int ID;
         string Nome = " ";
         int Idade;
@@ -59,6 +61,7 @@ namespace Hospital
 
             };
         }*/
+        #endregion
 
         public string Nome { get; set; }
         //public int Idade { get; set; }

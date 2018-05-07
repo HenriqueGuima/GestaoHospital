@@ -10,6 +10,8 @@ namespace Hospital
     {
         static void Main(string[] args)
         {
+
+            #region COMMENT
             //Menu_Principal menu = new Menu_Principal();
 
             ////Dados pré-definidos
@@ -39,7 +41,9 @@ namespace Hospital
             //Console.ReadKey();
 
             //menu.Show();
-            Patient patient1 = new Patient("nome");
+            #endregion
+
+            Patient patient1 = new Patient("nome", "condição");
             Patients patients = new Patients();
             patients.AddP(patient1);
 
@@ -49,17 +53,24 @@ namespace Hospital
 
             op = int.Parse(Console.ReadLine());
 
-            switch (op)
+            do
             {
-                case 0:
-                    break;
-                case 1:
-                    Console.Clear();
-                    Menu_Principal.PatientsI();
-                    break;
-                default:
-                    break;
-            }
+                switch (op)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        Console.Clear();
+                        Menu_Principal.PatientsI();
+                        break;
+                    case 2:
+                        Console.Clear();
+                        Medic.MostraM();
+                        break;
+                    default:
+                        break;
+                }
+            } while (op != 0);
         }
 
     }

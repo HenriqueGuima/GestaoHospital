@@ -44,11 +44,8 @@
   <ItemGroup>
     <Compile Include="Horario.cs" />
     <Compile Include="Medic.cs" />
-    <Compile Include="Menu_Diseases.cs" />
     <Compile Include="Menu_Doctors.cs" />
-    <Compile Include="Menu_Patient.cs" />
     <Compile Include="Menu_Principal.cs" />
-    <Compile Include="Menu_Symptoms.cs" />
     <Compile Include="Patient.cs" />
     <Compile Include="Patients.cs" />
     <Compile Include="Program.cs" />

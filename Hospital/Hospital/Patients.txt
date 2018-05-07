@@ -1,1 +1,16 @@
-﻿
+﻿Nome : hentique
+ Condição: cardíaco
+Nome : Guima
+ Condição: Ataque cardíaco
+Nome : Henrique
+ Condição: Ataque cardíaco
+Nome : afdh
+ Condição: cardíaco
+
+
+Nome : sdfn
+ Condição: cardíaco
+
+
+Nome : leonardo
+ Condição: cardíaco Data: 07-Aug-18 21:46:00
