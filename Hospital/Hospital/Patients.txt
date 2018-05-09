@@ -1,16 +1,20 @@
-﻿Nome : hentique
- Condição: cardíaco
-Nome : Guima
- Condição: Ataque cardíaco
-Nome : Henrique
- Condição: Ataque cardíaco
-Nome : afdh
- Condição: cardíaco
+﻿
+
+Nome : Rodrigo
+ Condição: Ataque cardíaco 
+Data: 25-Aug-18 15:00:00
 
 
-Nome : sdfn
- Condição: cardíaco
+Nome : Francisco
+ Condição: Enfarte de miocárdio 
+Data: 15-Jun-18 00:00:00
 
+Henrique com Enfarte vai automaticamente para consulta em 08-May-18 00:00:00 como prioridade1
 
-Nome : leonardo
- Condição: cardíaco Data: 07-Aug-18 21:46:00
+sfgj com enfarte vai automaticamente para consulta em 08-May-18 00:00:00 como prioridade1
+
+sdg com enfarte vai automaticamente para consulta em 08-May-18 00:00:00 como prioridade1
+
+Entry--> 08-May-18 17:11:12:: sfgmcom enfarte vai automaticamente para consulta em 08-May-18 00:00:00 como prioridade1
+
+Entry--> 08-May-18 17:12:26:: adfh com enfarte vai automaticamente para consulta em 8 May, 2018 como prioridade1

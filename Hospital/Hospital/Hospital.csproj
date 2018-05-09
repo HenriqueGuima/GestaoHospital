@@ -61,7 +61,7 @@
     <Content Include="Diseases.txt" />
     <Content Include="Doctors.txt" />
     <Content Include="Patients.txt" />
-    <Content Include="Symptoms.txt" />
+    <Content Include="SymptomsCard.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

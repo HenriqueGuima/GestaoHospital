@@ -13,6 +13,11 @@ namespace Hospital
 
         static int tpatient = 0;
 
+        public enum Prioridades
+        {
+            prioridade1, prioridade2, prioridade3 
+        }
+
         public Patient()
         {
             tpatient++;

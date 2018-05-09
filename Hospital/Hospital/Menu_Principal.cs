@@ -102,56 +102,85 @@ namespace Hospital
                         Console.WriteLine("Nome: ");
                         p1.Nome = Console.ReadLine();
 
-                        Console.WriteLine("Condição: \n");
+                        Console.WriteLine("\nCondição: ");
                         p1.Cond = Console.ReadLine();
 
+                    Enum prioridades = Patient.Prioridades.prioridade2;
 
-                        if (p1.Cond.Contains("cardíaco"))
+                    #region BOOL PRIORIDADES
+                    //A serem usados para ciclos condicionais
+                    bool PrioridadeNormal(Patient.Prioridades prn)
+                    {
+                        return (prn & Patient.Prioridades.prioridade2) > 0;
+                    }
+
+                    bool PrioridadeBaixa(Patient.Prioridades prb)
+                    {
+                        return (prb & Patient.Prioridades.prioridade3) > 0;
+                    }
+
+                    #endregion
+
+                    if (p1.Cond.Contains("cardíaco") || p1.Cond.Contains("miocárdio"))
+                    {
+                        Console.WriteLine("Olá {0}! Aqui estão os cardiologistas disponíveis:\n", p1.Nome);
+                        Medic.MostraCard();
+                    }
+                    else if (p1.Cond.Contains("Enfarte") || p1.Cond.Contains("enfarte"))
+                    {
+                        //Patient.Prioridades.prioridade1.ToString();
+                        //resposta = "s";
+                        //Console.WriteLine(p1.Cond);
+
+                        prioridades = Patient.Prioridades.prioridade1;
+
+                        DateTime thisDay = DateTime.Today;
+                        DateTime thisTime = DateTime.UtcNow;
+                        //Console.WriteLine("\n{0} com {1} vai automaticamente para consulta em {2} como {3}", p1.Nome, p1.Cond , thisDay.ToString(), prioridades.ToString());
+
+                        #region ESCREVE OS DADOS PARA UM FICHEIRO
+                        string fileName = @"C:\Users\HenriqueAlbertoBarro\source\repos\GestaoHospital\Hospital\Hospital\Patients.txt";
+
+                        using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\HenriqueAlbertoBarro\source\repos\GestaoHospital\Hospital\Hospital\Patients.txt", true))
                         {
-                            Console.WriteLine("Olá {0}! Aqui estão os cardiologistas disponíveis:\n", p1.Nome);
-                            Medic.MostraCard();
+                            //file.WriteLine("\n\nNome : {0}\n Condição: {1} \nData: {2}", p1.Nome, p1.Cond, thisDay);
+                            file.WriteLine("\nEntry> {0} :: {1} com {2} vai automaticamente para consulta em {3} como {4}", thisTime.ToString(), p1.Nome, p1.Cond, thisDay.ToString("D"), prioridades.ToString());
+                        }
+                        using (StreamReader sr = File.OpenText(fileName))
+                        {
+                            string s = "";
+                            while ((s = sr.ReadLine()) != null)
+                            {
+                                Console.WriteLine(s);
+                            }
+                            Console.WriteLine("");
                         }
 
-                        Console.WriteLine("Marcar consulta?");
+                        #endregion
 
-                        string resposta = Console.ReadLine();
+                        //Console.WriteLine("\n{0} {1} em ", p1.Cond, prioridades.ToString());
+                    }
+                    else if (p1.Cond.Contains("febre"))
+                    {
+                        //PrioridadeBaixa(Patient.Prioridades.prioridade3);
+                        Console.WriteLine(Patient.Prioridades.prioridade3);
+                    }
 
-                        if (resposta == "s")
-                        {
-                            Console.WriteLine("Em que data? A data tem que estar assim--> dd/mm/aaaa HH:mm");
+                    #region COMMENT
+                    //string path = @"c:\Users\HenriqueAlbertoBarro\source\repos\GestaoHospital\Hospital\Hospital\SymptomsCard.txt";
 
-                            string data = Console.ReadLine();
+                    //string contents = File.ReadAllText(path);
+                    //if (contents.Contains(p1.Cond))
+                    //{
+                    //    Console.WriteLine("Olá {0}! Aqui estão os cardiologistas disponíveis:\n", p1.Nome);
+                    //    Medic.MostraCard();
+                    //}
+                    #endregion
 
-                            DateTime ParseDate = DateTime.Parse(data);
-                            Console.WriteLine(ParseDate);
+                    
 
-                            //string DataS = Convert.ToString(ParseDate);
-
-                            //Método que vai dizer que médico está disponível
-                            //TrataData(data);
-
-                            #region ESCREVE OS DADOS PARA UM FICHEIRO
-                            string fileName = @"C:\Users\HenriqueAlbertoBarro\source\repos\GestaoHospital\Hospital\Hospital\Patients.txt";
-
-                            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\HenriqueAlbertoBarro\source\repos\GestaoHospital\Hospital\Hospital\Patients.txt", true))
-                            {
-                                file.WriteLine("\n\nNome : {0}\n Condição: {1} \nData: {2}", p1.Nome, p1.Cond, ParseDate);
-                            }
-                            using (StreamReader sr = File.OpenText(fileName))
-                            {
-                                string s = "";
-                                while ((s = sr.ReadLine()) != null)
-                                {
-                                    Console.WriteLine(s);
-                                }
-                                Console.WriteLine("");
-                            }
-
-                            #endregion
-                        }
-                        Console.ReadLine();
-
-                        break;
+                    Console.ReadLine();
+                    break;
                     case 2:
                         Console.Clear();
                         Patient.MostraP();
@@ -188,5 +217,50 @@ namespace Hospital
 
             Console.ReadKey();
         }
+
+        //static public string MarcaConsulta(string resposta)
+        //{
+        //    Console.WriteLine("\nMarcar consulta? [s], [n]");
+
+        //    if (resposta == "s")
+        //    {
+        //        Console.WriteLine("Em que data? A data tem que estar assim--> dd/mm/aaaa HH:mm");
+
+        //        string data = Console.ReadLine();
+
+        //        DateTime ParseDate = DateTime.Parse(data);
+        //        Console.WriteLine(ParseDate);
+
+        //        //string DataS = Convert.ToString(ParseDate);
+
+        //        //Método que vai dizer que médico está disponível
+        //        //TrataData(data);
+
+        //        #region ESCREVE OS DADOS PARA UM FICHEIRO
+        //        string fileName = @"C:\Users\HenriqueAlbertoBarro\source\repos\GestaoHospital\Hospital\Hospital\Patients.txt";
+
+        //        using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\HenriqueAlbertoBarro\source\repos\GestaoHospital\Hospital\Hospital\Patients.txt", true))
+        //        {
+        //            file.WriteLine("\n\nNome : {0}\n Condição: {1} \nData: {2}", p1.Nome, p1.Cond, ParseDate);
+        //        }
+        //        using (StreamReader sr = File.OpenText(fileName))
+        //        {
+        //            string s = "";
+        //            while ((s = sr.ReadLine()) != null)
+        //            {
+        //                Console.WriteLine(s);
+        //            }
+        //            Console.WriteLine("");
+        //        }
+
+        //        #endregion
+        //    }
+        //    else
+        //    {
+        //        Menu_Principal.PatientsI();
+        //    }
+
+        //    Console.ReadLine();
+        //}
     }
 }
