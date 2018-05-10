@@ -13,14 +13,16 @@ namespace Hospital
            Cardiologia, Neurologia
         }
 
+        
         public Especialidades Esp { get; set; }
 
-        public Medic(string nome, Especialidades esp)
+        public Medic(string nome, Especialidades esp, DateTime horario)
         {
             //base.ID = id;
             base.Nome = nome;
             //base.Idade = idade;
             this.Esp = esp;
+            //this.Horario = horario;
         }
 
         static public void MostraM()
@@ -62,5 +64,48 @@ namespace Hospital
 
             file.Close();
         }
+
+        static public string EscolheMedico (string input)
+        {
+            if (input.Contains("Armindo Ponce"))
+            {
+                if (Disponivel())
+                {
+                    return "Purificacão Armindo Ponce Maurício Pardal";
+                }
+            }
+            else if (input.Contains("Fonseca Belarmina"))
+            {
+                if (Disponivel())
+                {
+                    return "Fosceca Belarmina Iria Rebouta Rios";
+                }
+            }
+
+            return input;
+        }
+
+        static public bool Disponivel()
+        {
+            DateTime hora = new DateTime();
+            hora.AddHours(1);
+            
+            
+            if (DataH()>DateTime.Now && DataH()<hora)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        static public DateTime DataH()
+        {
+            DateTime data = DateTime.Now;
+
+            return data;
+        }
+        
+
+
     }
 }

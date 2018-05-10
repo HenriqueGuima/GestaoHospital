@@ -63,10 +63,26 @@ namespace Hospital
         }*/
         #endregion
 
-        public string Nome { get; set; }
-        //public int Idade { get; set; }
-        
+        string nome = "";
+        DateTime horario;
 
-           
+        public string Nome { get {return nome; } set {nome = value; } }
+        //public int Idade { get; set; }
+        public DateTime Horario{ get {return horario; } set {horario = value; } }
+
+        public Employee()
+        {
+            nome = "";
+            horario = DateTime.Now;
+        }
+
+        public Employee(string nome, DateTime horario)
+        {;
+            this.nome = nome;
+            this.horario = horario;
+        }
+
+
+
     }
 }

@@ -137,14 +137,23 @@ namespace Hospital
                         DateTime thisDay = DateTime.Today;
                         DateTime thisTime = DateTime.UtcNow;
                         //Console.WriteLine("\n{0} com {1} vai automaticamente para consulta em {2} como {3}", p1.Nome, p1.Cond , thisDay.ToString(), prioridades.ToString());
+                        Console.WriteLine("\nOlá {0}! Aqui estão os cardiologistas disponíveis:\n", p1.Nome);
+
+                        Medic.MostraCard();
+                        string OpMedico = Console.ReadLine();
+                        Medic.EscolheMedico(OpMedico);
 
                         #region ESCREVE OS DADOS PARA UM FICHEIRO
-                        string fileName = @"C:\Users\HenriqueAlbertoBarro\source\repos\GestaoHospital\Hospital\Hospital\Patients.txt";
+                        string fileName = "Patients.txt";
 
-                        using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\HenriqueAlbertoBarro\source\repos\GestaoHospital\Hospital\Hospital\Patients.txt", true))
+                        using (System.IO.StreamWriter file = new System.IO.StreamWriter("Patients.txt", true))
                         {
                             //file.WriteLine("\n\nNome : {0}\n Condição: {1} \nData: {2}", p1.Nome, p1.Cond, thisDay);
-                            file.WriteLine("\nEntry> {0} :: {1} com {2} vai automaticamente para consulta em {3} como {4}", thisTime.ToString(), p1.Nome, p1.Cond, thisDay.ToString("D"), prioridades.ToString());
+                            Console.WriteLine("\n");
+                            file.WriteLine("\n> {0} :: {1} com {2} vai automaticamente para consulta em {3} como {4}", thisTime.ToString(), p1.Nome, p1.Cond, thisDay.ToString("D"), prioridades.ToString());
+
+                            //Medic m = new Medic () 
+                            //Medic.Horario();
                         }
                         using (StreamReader sr = File.OpenText(fileName))
                         {
