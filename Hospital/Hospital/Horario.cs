@@ -9,8 +9,6 @@ namespace Hospital
 {
     class Horario : Employee
     {
-        
-
-
+               
     }
 }

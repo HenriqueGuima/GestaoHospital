@@ -65,6 +65,48 @@ namespace Hospital
             file.Close();
         }
 
+        static public void MostraPsicologo()
+        {
+            int i = 0;
+            string line;
+            string path = @"c:\Users\HenriqueAlbertoBarro\source\repos\GestaoHospital\Hospital\Hospital\Doctors.txt";
+
+            System.IO.StreamReader file = new System.IO.StreamReader(path);
+
+            while ((line = file.ReadLine()) != null)
+            {
+                if (line.Contains("Psicologo"))
+                {
+                    System.Console.WriteLine(line);
+                    i++;
+                }
+
+            }
+
+            file.Close();
+        }
+
+        static public void MostraGeral()
+        {
+            int i = 0;
+            string line;
+            string path = @"c:\Users\HenriqueAlbertoBarro\source\repos\GestaoHospital\Hospital\Hospital\Doctors.txt";
+
+            System.IO.StreamReader file = new System.IO.StreamReader(path);
+
+            while ((line = file.ReadLine()) != null)
+            {
+                if (line.Contains("Medicina Geral"))
+                {
+                    System.Console.WriteLine(line);
+                    i++;
+                }
+
+            }
+
+            file.Close();
+        }
+
         static public string EscolheMedico (string input)
         {
             if (input.Contains("Armindo Ponce"))
@@ -85,13 +127,14 @@ namespace Hospital
             return input;
         }
 
+
         static public bool Disponivel()
         {
             DateTime hora = new DateTime();
             hora.AddHours(1);
-            
-            
-            if (DataH()>DateTime.Now && DataH()<hora)
+
+
+            if (DataH() > DateTime.Now && DataH() < hora)
             {
                 return true;
             }

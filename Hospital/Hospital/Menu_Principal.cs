@@ -84,14 +84,14 @@ namespace Hospital
             //p = new Patient[a.Length];
             #endregion
 
-            //do
-            //{
+            do
+            {
                 Console.Clear();
                 Console.WriteLine("1. New Patient");
-                Console.WriteLine("2- List Patients");
+                Console.WriteLine("2. List Patients");
                 //Console.WriteLine("3- Edit Patient");
                 //Console.WriteLine("4- Remove Patient");
-                Console.WriteLine("0- Return");
+                Console.WriteLine("0. Return");
                 opcao = int.Parse(Console.ReadLine());
 
                 switch (opcao)
@@ -105,9 +105,9 @@ namespace Hospital
                         Console.WriteLine("\nCondição: ");
                         p1.Cond = Console.ReadLine();
 
-                    Enum prioridades = Patient.Prioridades.prioridade2;
+                        Enum prioridades = Patient.Prioridades.prioridade2;
 
-                    #region BOOL PRIORIDADES
+                        #region BOOL PRIORIDADES
                     //A serem usados para ciclos condicionais
                     bool PrioridadeNormal(Patient.Prioridades prn)
                     {
@@ -119,15 +119,17 @@ namespace Hospital
                         return (prb & Patient.Prioridades.prioridade3) > 0;
                     }
 
-                    #endregion
+                        #endregion
 
-                    if (p1.Cond.Contains("cardíaco") || p1.Cond.Contains("miocárdio"))
-                    {
+                        #region CONDIÇÕES PARA PRIORIDADE 1
+                        if (p1.Cond.Contains("cardíaco") || p1.Cond.Contains("miocárdio"))
+                        {
                         Console.WriteLine("Olá {0}! Aqui estão os cardiologistas disponíveis:\n", p1.Nome);
                         Medic.MostraCard();
-                    }
-                    else if (p1.Cond.Contains("Enfarte") || p1.Cond.Contains("enfarte"))
-                    {
+
+                        }
+                        else if (p1.Cond.Contains("Enfarte") || p1.Cond.Contains("enfarte"))
+                        {
                         //Patient.Prioridades.prioridade1.ToString();
                         //resposta = "s";
                         //Console.WriteLine(p1.Cond);
@@ -168,39 +170,77 @@ namespace Hospital
                         #endregion
 
                         //Console.WriteLine("\n{0} {1} em ", p1.Cond, prioridades.ToString());
-                    }
-                    else if (p1.Cond.Contains("febre"))
-                    {
-                        //PrioridadeBaixa(Patient.Prioridades.prioridade3);
-                        Console.WriteLine(Patient.Prioridades.prioridade3);
-                    }
+                        }
+                        #endregion
 
-                    #region COMMENT
-                    //string path = @"c:\Users\HenriqueAlbertoBarro\source\repos\GestaoHospital\Hospital\Hospital\SymptomsCard.txt";
+                        #region CONDIÇÕES PARA PRIORIDADE 2
+                        if (p1.Cond.Contains("depressão") || p1.Cond.Contains("ansiedade"))
+                        {
+                            //PrioridadeBaixa(Patient.Prioridades.prioridade2);
+                            //Console.WriteLine(Patient.Prioridades.prioridade2);
 
-                    //string contents = File.ReadAllText(path);
-                    //if (contents.Contains(p1.Cond))
-                    //{
-                    //    Console.WriteLine("Olá {0}! Aqui estão os cardiologistas disponíveis:\n", p1.Nome);
-                    //    Medic.MostraCard();
-                    //}
-                    #endregion
+                            Console.WriteLine("Olá {0}! Aqui estão os psicólogos disponíveis:\n", p1.Nome);
+                            Medic.MostraPsicologo();
 
-                    
+                            Console.WriteLine("\nMarcar consulta? [s], [n]");
+                            string resposta = Console.ReadLine();
 
-                    Console.ReadLine();
+                            if (resposta == "s")
+                            {
+                                Console.WriteLine("Em que data? A data tem que estar assim--> dd/mm/aaaa HH:mm");
+
+                                string data = Console.ReadLine();
+
+                                DateTime ParseDate = DateTime.Parse(data);
+                                Console.WriteLine(ParseDate);
+
+                                string DataS = Convert.ToString(ParseDate);
+
+                                #region ESCREVE OS DADOS PARA UM FICHEIRO
+                                string fileName = @"C:\Users\HenriqueAlbertoBarro\source\repos\GestaoHospital\Hospital\Hospital\Patients.txt";
+
+                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\HenriqueAlbertoBarro\source\repos\GestaoHospital\Hospital\Hospital\Patients.txt", true))
+                                {
+                                    file.WriteLine("\n\nNome : {0}\n Condição: {1} \nData: {2}", p1.Nome, p1.Cond, ParseDate);
+                                }
+                                using (StreamReader sr = File.OpenText(fileName))
+                                {
+                                    string s = "";
+                                    while ((s = sr.ReadLine()) != null)
+                                    {
+                                        Console.WriteLine(s);
+                                    }
+                                    Console.WriteLine("");
+                                }
+
+                                #endregion
+                            }
+                        }
+                        #endregion
+
+                        #region CONDIÇÕES PARA PRIORIDADE 3
+                        if (p1.Cond.Contains("febre"))
+                        {
+                            //PrioridadeBaixa(Patient.Prioridades.prioridade3);
+                            Console.WriteLine(Patient.Prioridades.prioridade3);
+                            Console.WriteLine("Olá {0}! Aqui estão os médicos de medicina geral disponíveis:\n", p1.Nome);
+                            Medic.MostraGeral();
+                        }
+                        #endregion
+
+                        Console.ReadLine();
                     break;
+
                     case 2:
                         Console.Clear();
                         Patient.MostraP();
                         Console.ReadKey();
                         break;
-                    case 0:
                     default:
                         //menu.Show();
                         break;
                 }
-            //} while (opcao != 0);
+            } while (opcao != 0);
 
             #region COMMENT
             //Console.WriteLine("Nome: ");
@@ -227,49 +267,49 @@ namespace Hospital
             Console.ReadKey();
         }
 
-        //static public string MarcaConsulta(string resposta)
-        //{
-        //    Console.WriteLine("\nMarcar consulta? [s], [n]");
+        static public string MarcaConsulta(string resposta)
+        {
+            Console.WriteLine("\nMarcar consulta? [s], [n]");
 
-        //    if (resposta == "s")
-        //    {
-        //        Console.WriteLine("Em que data? A data tem que estar assim--> dd/mm/aaaa HH:mm");
+            if (resposta == "s")
+            {
+                Console.WriteLine("Em que data? A data tem que estar assim--> dd/mm/aaaa HH:mm");
 
-        //        string data = Console.ReadLine();
+                string data = Console.ReadLine();
 
-        //        DateTime ParseDate = DateTime.Parse(data);
-        //        Console.WriteLine(ParseDate);
+                DateTime ParseDate = DateTime.Parse(data);
+                Console.WriteLine(ParseDate);
 
-        //        //string DataS = Convert.ToString(ParseDate);
+                string DataS = Convert.ToString(ParseDate);
 
-        //        //Método que vai dizer que médico está disponível
-        //        //TrataData(data);
+                //Método que vai dizer que médico está disponível
+                //TrataData(data);
 
-        //        #region ESCREVE OS DADOS PARA UM FICHEIRO
-        //        string fileName = @"C:\Users\HenriqueAlbertoBarro\source\repos\GestaoHospital\Hospital\Hospital\Patients.txt";
+                #region ESCREVE OS DADOS PARA UM FICHEIRO
+                string fileName = @"C:\Users\HenriqueAlbertoBarro\source\repos\GestaoHospital\Hospital\Hospital\Patients.txt";
 
-        //        using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\HenriqueAlbertoBarro\source\repos\GestaoHospital\Hospital\Hospital\Patients.txt", true))
-        //        {
-        //            file.WriteLine("\n\nNome : {0}\n Condição: {1} \nData: {2}", p1.Nome, p1.Cond, ParseDate);
-        //        }
-        //        using (StreamReader sr = File.OpenText(fileName))
-        //        {
-        //            string s = "";
-        //            while ((s = sr.ReadLine()) != null)
-        //            {
-        //                Console.WriteLine(s);
-        //            }
-        //            Console.WriteLine("");
-        //        }
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\HenriqueAlbertoBarro\source\repos\GestaoHospital\Hospital\Hospital\Patients.txt", true))
+                {
+                    file.WriteLine("\n\nNome : {0}\n Condição: {1} \nData: {2}", p1.Nome, p1.Cond, ParseDate);
+                }
+                using (StreamReader sr = File.OpenText(fileName))
+                {
+                    string s = "";
+                    while ((s = sr.ReadLine()) != null)
+                    {
+                        Console.WriteLine(s);
+                    }
+                    Console.WriteLine("");
+                }
 
-        //        #endregion
-        //    }
-        //    else
-        //    {
-        //        Menu_Principal.PatientsI();
-        //    }
+                #endregion
+            }
+            else
+            {
+                Menu_Principal.PatientsI();
+            }
 
-        //    Console.ReadLine();
-        //}
+            Console.ReadLine();
+        }
     }
 }
