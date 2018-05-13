@@ -187,8 +187,9 @@ namespace Hospital
 
                             if (resposta == "s")
                             {
-                                Console.WriteLine("Data (dd/mm/aaaa HH:mm)");
-
+                                Console.WriteLine("Data: (dd/mm/aaaa HH:mm)");
+                                Horario h = new Horario();
+                                h.MostraHorario();
                                 string data = Console.ReadLine();
 
                                 DateTime ParseDate = DateTime.Parse(data);

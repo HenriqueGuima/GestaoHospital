@@ -10,7 +10,7 @@ namespace Hospital
     {
         public enum Especialidades
         {
-           Cardiologia, Neurologia
+           Cardiologia, Neurologia, Ortopedia, Dermatologia, Ginecologia, Psicologia, Pneumologia, Geral
         }
 
         

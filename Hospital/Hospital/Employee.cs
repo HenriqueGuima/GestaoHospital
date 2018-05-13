@@ -77,7 +77,7 @@ namespace Hospital
         }
 
         public Employee(string nome, DateTime horario)
-        {;
+        {
             this.nome = nome;
             this.horario = horario;
         }
