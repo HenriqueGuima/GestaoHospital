@@ -187,7 +187,7 @@ namespace Hospital
 
                             if (resposta == "s")
                             {
-                                Console.WriteLine("Em que data? A data tem que estar assim--> dd/mm/aaaa HH:mm");
+                                Console.WriteLine("Data (dd/mm/aaaa HH:mm)");
 
                                 string data = Console.ReadLine();
 
@@ -267,49 +267,53 @@ namespace Hospital
             Console.ReadKey();
         }
 
-        static public string MarcaConsulta(string resposta)
-        {
-            Console.WriteLine("\nMarcar consulta? [s], [n]");
+        //static public string MarcaConsulta(string resposta)
+        //{
+        //    Patient p1 = new Patient();
+        //    Console.WriteLine("\nMarcar consulta? [s], [n]");
 
-            if (resposta == "s")
-            {
-                Console.WriteLine("Em que data? A data tem que estar assim--> dd/mm/aaaa HH:mm");
+        //    do
+        //    {
+        //        if (resposta == "s" || resposta == "S")
+        //        {
+        //            Console.WriteLine("Data: (dd/mm/aaaa HH:mm)");
 
-                string data = Console.ReadLine();
+        //            string data = Console.ReadLine();
 
-                DateTime ParseDate = DateTime.Parse(data);
-                Console.WriteLine(ParseDate);
+        //            DateTime ParseDate = DateTime.Parse(data);
+        //            Console.WriteLine(ParseDate);
 
-                string DataS = Convert.ToString(ParseDate);
+        //            string DataS = Convert.ToString(ParseDate);
 
-                //Método que vai dizer que médico está disponível
-                //TrataData(data);
+        //            //Método que vai dizer que médico está disponível
+        //            //TrataData(data);
 
-                #region ESCREVE OS DADOS PARA UM FICHEIRO
-                string fileName = @"C:\Users\HenriqueAlbertoBarro\source\repos\GestaoHospital\Hospital\Hospital\Patients.txt";
+        //            #region ESCREVE OS DADOS PARA UM FICHEIRO
+        //            string fileName = "Patients.txt";
 
-                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\HenriqueAlbertoBarro\source\repos\GestaoHospital\Hospital\Hospital\Patients.txt", true))
-                {
-                    file.WriteLine("\n\nNome : {0}\n Condição: {1} \nData: {2}", p1.Nome, p1.Cond, ParseDate);
-                }
-                using (StreamReader sr = File.OpenText(fileName))
-                {
-                    string s = "";
-                    while ((s = sr.ReadLine()) != null)
-                    {
-                        Console.WriteLine(s);
-                    }
-                    Console.WriteLine("");
-                }
+        //            using (System.IO.StreamWriter file = new System.IO.StreamWriter("Patients.txt", true))
+        //            {
+        //                file.WriteLine("\n\nNome : {0}\n Condição: {1} \nData: {2}", p1.Nome, p1.Cond, ParseDate);
+        //            }
+        //            using (StreamReader sr = File.OpenText(fileName))
+        //            {
+        //                string s = "";
+        //                while ((s = sr.ReadLine()) != null)
+        //                {
+        //                    Console.WriteLine(s);
+        //                }
+        //                Console.WriteLine("");
+        //            }
 
-                #endregion
-            }
-            else
-            {
-                Menu_Principal.PatientsI();
-            }
+        //            #endregion
+        //        }
+        //        else if (resposta == "n" || resposta == "N")
+        //        {
+        //            Menu_Principal.PatientsI();
+        //        }
+        //    } while (resposta != "s" || resposta != "S" || resposta != "n" || resposta != "N");
 
-            Console.ReadLine();
-        }
+        //    Console.ReadLine();
+        //}
     }
 }

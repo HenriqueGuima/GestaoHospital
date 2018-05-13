@@ -56,10 +56,10 @@ namespace Hospital
             //variaveis
             int i = 0;
             string line;
-            string path = @"Symptoms.txt";
+            string path = "Symptoms.txt";
 
             // Ler o ficheiro e mostrar linha a linha
-            System.IO.StreamReader file = new System.IO.StreamReader("path");
+            System.IO.StreamReader file = new System.IO.StreamReader(path);
             while ((line = file.ReadLine()) != null)
             {
                 System.Console.WriteLine(line);

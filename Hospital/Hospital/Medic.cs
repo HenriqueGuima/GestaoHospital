@@ -30,7 +30,7 @@ namespace Hospital
             //variaveis
             int i = 0;
             string line;
-            string path = @"c:\Users\HenriqueAlbertoBarro\source\repos\GestaoHospital\Hospital\Hospital\Doctors.txt";
+            string path = "Doctors.txt";
 
             // Ler o ficheiro e mostrar linha a linha
             System.IO.StreamReader file = new System.IO.StreamReader(path);
@@ -48,7 +48,7 @@ namespace Hospital
         {
             int i = 0;
             string line;
-            string path = @"c:\Users\HenriqueAlbertoBarro\source\repos\GestaoHospital\Hospital\Hospital\Doctors.txt";
+            string path = "Doctors.txt";
 
             System.IO.StreamReader file = new System.IO.StreamReader(path);
 
@@ -69,7 +69,7 @@ namespace Hospital
         {
             int i = 0;
             string line;
-            string path = @"c:\Users\HenriqueAlbertoBarro\source\repos\GestaoHospital\Hospital\Hospital\Doctors.txt";
+            string path = "Doctors.txt";
 
             System.IO.StreamReader file = new System.IO.StreamReader(path);
 
@@ -90,7 +90,7 @@ namespace Hospital
         {
             int i = 0;
             string line;
-            string path = @"c:\Users\HenriqueAlbertoBarro\source\repos\GestaoHospital\Hospital\Hospital\Doctors.txt";
+            string path = "Doctors.txt";
 
             System.IO.StreamReader file = new System.IO.StreamReader(path);
 

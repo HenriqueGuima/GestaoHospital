@@ -41,7 +41,7 @@ namespace Hospital
             //variaveis
             int i = 0;
             string line;
-            string path = @"c:\Users\HenriqueAlbertoBarro\source\repos\GestaoHospital\Hospital\Hospital\Patients.txt";
+            string path = "Patients.txt";
 
             // Ler o ficheiro e mostrar linha a linha
             System.IO.StreamReader file = new System.IO.StreamReader(path);
